@@ -1,0 +1,23 @@
+# mkinitcpio preset file for the 'linux-cix' package
+
+# Use the global mkinitcpio configuration file
+ALL_config="/etc/mkinitcpio.conf"
+
+# Specify the kernel this preset is for by pointing to its image file
+# Make sure this path matches where your linux-cix package installed the kernel!
+ALL_kver="/boot/vmlinuz-linux-cix"
+
+# List of presets defined below (default and fallback)
+PRESETS=('default' 'fallback')
+
+# Settings for the default image
+# Output filename for the default initramfs image
+default_image="/boot/initramfs-linux-cix.img"
+# Default options (usually none)
+# default_options=""
+
+# Settings for the fallback image
+# Output filename for the fallback initramfs image
+fallback_image="/boot/initramfs-linux-cix-fallback.img"
+# Fallback options: Disable autodetect hook to include more modules
+fallback_options="-S autodetect"
